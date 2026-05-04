@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+@layer utilities {
+  .atmosphere {
+    background: 
+      radial-gradient(circle at 80% 20%, rgba(242, 125, 38, 0.1) 0%, transparent 40%),
+      radial-gradient(circle at 20% 80%, rgba(138, 43, 226, 0.1) 0%, transparent 40%);
+  }
+  .glass { 
+    background: rgba(255, 255, 255, 0.03); 
+    backdrop-filter: blur(12px); 
+    border: 1px solid rgba(255, 255, 255, 0.08); 
+  }
+  .time-glitch { 
+    text-shadow: 2px 0 #f27d26, -2px 0 #8a2be2; 
+  }
+  .scanline { 
+    background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.1) 50%); 
+    background-size: 100% 4px; 
+  }
+}

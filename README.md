@@ -1,20 +1,23 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# CHORONO: Time Weaver
+A mind-bending time manipulation puzzle-platformer built on Base network with an integrated AI Agent for Warp Racing & Timeline ecosystem coordination.
 
-# Run and deploy your AI Studio app
+## Overview
+You are a Chrono Weaver who can manipulate time in small areas to solve puzzles, overcome obstacles, and reach the end of fractured timelines.
 
-This contains everything you need to run your app locally.
+### Features
+- **Time Manipulation:** Rewind, slow, pause, and echo time to solve temporal puzzles.
+- **On-chain Integration:** Fully integrated with Base Mainnet (ERC-8021 & ERC-8004).
+- **A2A / Trustless Agents:** Built-in MCP server for trustless agent execution and parallel timeline synchronization.
+- **SIWE Signatures:** Sign-In With Ethereum for secure, trustless scoring.
 
-View your app in AI Studio: https://ai.studio/apps/ab22d301-32a3-4b8c-b08c-dd3c891f0a82
+## Technical Details
+- Frontend: React 19, TypeScript, Next.js / Vite, Tailwind CSS, Framer Motion
+- Blockchain: Wagmi, Viem, Base Network
+- Backend: Express, Vite Middleware for local development
 
-## Run Locally
+## Agent Configuration (EIP-8004)
+The agent operates securely on Base to optimize racing dynamics, time-trials, and transaction attributions using the configured `agent-card.json`.
+Provides automated temporal checks via the local MCP endpoints.
 
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## License
+MIT

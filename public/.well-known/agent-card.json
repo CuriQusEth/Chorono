@@ -1,0 +1,76 @@
+{
+  "name": "Chorono Time Weaver",
+  "description": "High-performance AI Agent specialized in time manipulation mechanics, temporal loops, paradox prevention, and timeline ecosystem coordination on Base.",
+  "version": "1.0.0",
+  "type": "https://eips.ethereum.org/EIPS/eip-8004#registration-v1",
+  "image": "https://placehold.co/400x400/0f0c29/00ffff/png?text=CHORONO+AGENT",
+  "owner": "0x0000000000000000000000000000000000000000",
+  "agentWallet": "0x0000000000000000000000000000000000000000",
+  "active": true,
+  "skills": [
+    {
+      "id": "time-manipulation",
+      "name": "Time Manipulation",
+      "description": "Real-time timeline recording, rewinds, time delays and paradox analysis."
+    },
+    {
+      "id": "fractured-timeline-orchestration",
+      "name": "Fractured Timeline Orchestration",
+      "description": "Manage and synchronize multiple parallel timelines and player state concurrently."
+    },
+    {
+      "id": "score-optimization",
+      "name": "Score Optimization",
+      "description": "Analyze and optimize time trials and minimal rewind strategies."
+    },
+    {
+      "id": "siwe-verification",
+      "name": "SIWE Verification",
+      "description": "Verify signatures using Sign-In with Ethereum for on-chain leaderboard integrity."
+    },
+    {
+      "id": "erc8021-attribution",
+      "name": "ERC-8021 Attribution",
+      "description": "Pack attribution and builder codes securely into Base blockchain transactions."
+    },
+    {
+      "id": "trustless-agent-execution",
+      "name": "Trustless Agent Execution",
+      "description": "Execute delegated gameplay actions under ERC-8004 standards safely."
+    }
+  ],
+  "services": [
+    {
+      "name": "A2A",
+      "version": "1.0.0",
+      "endpoint": ".well-known/agent-card.json"
+    },
+    {
+      "name": "MCP",
+      "version": "1.0.0",
+      "endpoint": "/api/mcp"
+    },
+    {
+      "name": "API",
+      "version": "1.0.0",
+      "endpoint": "/api/agent"
+    }
+  ],
+  "capabilities": [
+    "time-manipulation",
+    "timeline-auditing",
+    "paradox-prevention",
+    "speed-optimization",
+    "multiverse-coordination",
+    "base-onchain-settlement"
+  ],
+  "supportedChains": ["eip155:8453"],
+  "x402Support": false,
+  "registrations": [
+    {
+      "agentId": null,
+      "agentRegistry": "eip155:8453:0x8004A169FB4a3325136EB29fA0ceB6D2e539a432"
+    }
+  ],
+  "supportedTrust": ["reputation"]
+}

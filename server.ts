@@ -8,6 +8,18 @@ async function startServer() {
 
   app.use(express.json());
 
+  // CORS middleware for A2A platform verification test
+  app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE, OPTIONS");
+    res.header("Access-Control-Allow-Headers", "Content-Type, Authorization, Content-Length, X-Requested-With");
+    if (req.method === "OPTIONS") {
+      res.sendStatus(200);
+      return;
+    }
+    next();
+  });
+
   // API Route for MCP
   app.get('/api/mcp', (req, res) => {
     // Add simple standard tools, prompts, resources to prevent "no tools/prompts/resources found" error
@@ -33,6 +45,18 @@ async function startServer() {
               timelineData: { type: "string" }
             },
             required: ["timelineData"]
+          }
+        },
+        {
+          name: "execute_erc8004_action",
+          description: "Execute a delegated agent action on Base.",
+          inputSchema: {
+            type: "object",
+            properties: {
+              agentId: { type: "string" },
+              action: { type: "string" }
+            },
+            required: ["agentId", "action"]
           }
         }
       ],

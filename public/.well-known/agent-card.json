@@ -1,6 +1,6 @@
 {
   "name": "Chorono Time Weaver",
-  "description": "High-performance AI Agent specialized in time manipulation mechanics, temporal loops, paradox prevention, and timeline ecosystem coordination on Base.",
+  "description": "High-performance AI Agent specialized in warp racing mechanics, real-time automation, multi-track management, competitive optimization and ecosystem coordination on Base.",
   "version": "1.0.0",
   "type": "https://eips.ethereum.org/EIPS/eip-8004#registration-v1",
   "image": "https://placehold.co/400x400/0f0c29/00ffff/png?text=CHORONO+AGENT",
@@ -9,34 +9,19 @@
   "active": true,
   "skills": [
     {
-      "id": "time-manipulation",
-      "name": "Time Manipulation",
-      "description": "Real-time timeline recording, rewinds, time delays and paradox analysis."
+      "id": "warp-racing",
+      "name": "Warp Racing",
+      "description": "Real-time warp racing mechanics, speed optimization and competitive track management."
     },
     {
-      "id": "fractured-timeline-orchestration",
-      "name": "Fractured Timeline Orchestration",
-      "description": "Manage and synchronize multiple parallel timelines and player state concurrently."
+      "id": "multi-track-orchestration",
+      "name": "Multi-Track Orchestration",
+      "description": "Manage and synchronize multiple racing instances and tracks simultaneously."
     },
     {
-      "id": "score-optimization",
-      "name": "Score Optimization",
-      "description": "Analyze and optimize time trials and minimal rewind strategies."
-    },
-    {
-      "id": "siwe-verification",
-      "name": "SIWE Verification",
-      "description": "Verify signatures using Sign-In with Ethereum for on-chain leaderboard integrity."
-    },
-    {
-      "id": "erc8021-attribution",
-      "name": "ERC-8021 Attribution",
-      "description": "Pack attribution and builder codes securely into Base blockchain transactions."
-    },
-    {
-      "id": "trustless-agent-execution",
-      "name": "Trustless Agent Execution",
-      "description": "Execute delegated gameplay actions under ERC-8004 standards safely."
+      "id": "performance-optimization",
+      "name": "Performance Optimization",
+      "description": "Analyze and optimize racing performance, timing and strategy in real-time."
     }
   ],
   "services": [
@@ -57,12 +42,12 @@
     }
   ],
   "capabilities": [
-    "time-manipulation",
-    "timeline-auditing",
-    "paradox-prevention",
+    "warp-racing",
+    "real-time-automation",
+    "multi-track-management",
     "speed-optimization",
-    "multiverse-coordination",
-    "base-onchain-settlement"
+    "competitive-orchestration",
+    "ecosystem-coordination"
   ],
   "supportedChains": ["eip155:8453"],
   "x402Support": false,

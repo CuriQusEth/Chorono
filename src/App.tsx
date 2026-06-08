@@ -4,10 +4,11 @@
  */
 
 import React, { useState } from 'react';
-import { WagmiProvider, useAccount, useConnect, useSignMessage } from 'wagmi';
+import { WagmiProvider, useAccount, useConnect, useSignMessage, useSendTransaction } from 'wagmi';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { injected } from 'wagmi/connectors';
 import { motion, AnimatePresence } from 'motion/react';
+import { Sun } from 'lucide-react';
 import { GameCanvas } from './components/GameCanvas';
 import { wagmiConfig, queryClient } from './lib/web3/config';
 import { buildERC8021Transaction } from './lib/erc8021';
@@ -19,6 +20,7 @@ function GameUI() {
   const { address, isConnected } = useAccount();
   const { connect } = useConnect();
   const { signMessageAsync } = useSignMessage();
+  const { sendTransaction } = useSendTransaction();
 
   const handleComplete = (time: number, rewinds: number) => {
     setScore({ time, rewinds });
@@ -49,9 +51,19 @@ function GameUI() {
       connect({ connector: injected() });
       return;
     }
-    // Simulate ERC-8021 Tx
-    const txData = buildERC8021Transaction('0x0', '0x', 'SAY_GM');
-    alert(`ERC-8021 Transaction created with attribution: ${txData.attribution}`);
+    
+    try {
+      sendTransaction({
+        to: '0xcD0dd3716C5561De47a24949335dF8a8CD8F71a3',
+        value: BigInt(0),
+        data: '0x'
+      }, {
+        onSuccess: (hash) => alert(`GM Transaction sent! ${hash}`),
+        onError: (err) => alert(`Failed to say GM: ${err.message}`)
+      });
+    } catch (e) {
+      console.error(e);
+    }
   };
 
   return (
@@ -86,9 +98,14 @@ function GameUI() {
                     Connect Wallet (Base)
                   </button>
                ) : (
-                  <div className="text-[11px] font-mono tracking-wider flex items-center gap-4 glass px-4 py-2 rounded-full">
-                     <span className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></div>Connected: {address?.slice(0, 6)}...{address?.slice(-4)}</span>
-                     <button onClick={sayGM} className="bg-white text-black px-4 py-1 text-[10px] font-bold uppercase tracking-widest hover:bg-[#f27d26] transition-colors rounded-full">Say GM on-chain</button>
+                  <div className="text-[11px] font-mono tracking-wider flex flex-col items-center gap-4 py-2">
+                     <span className="flex items-center gap-2 glass px-4 py-2 rounded-full"><div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></div>Connected: {address?.slice(0, 6)}...{address?.slice(-4)}</span>
+                     <button
+                       onClick={sayGM}
+                       className="px-3 py-2 rounded-lg bg-[#E8A020]/20 hover:bg-[#E8A020]/30 border border-[#E8A020]/40 text-[#E8A020] transition-colors flex items-center gap-2 font-['Cinzel'] text-xs font-bold"
+                     >
+                       <Sun className="w-4 h-4" /> Say GM
+                     </button>
                   </div>
                )}
             </div>
@@ -133,6 +150,15 @@ function GameUI() {
              >
                 {isConnected ? 'Record Timeline (SIWE)' : 'Connect & Record Score'}
              </button>
+
+             {isConnected && (
+               <button
+                 onClick={sayGM}
+                 className="w-full justify-center px-3 py-2 mb-4 rounded-lg bg-[#E8A020]/20 hover:bg-[#E8A020]/30 border border-[#E8A020]/40 text-[#E8A020] transition-colors flex items-center gap-2 font-['Cinzel'] text-xs font-bold"
+               >
+                 <Sun className="w-4 h-4" /> Say GM
+               </button>
+             )}
 
              <button 
                 onClick={() => setGameState('menu')}
